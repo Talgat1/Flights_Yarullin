@@ -50,8 +50,8 @@
           <Property Name="Arrival_date_time" Type="datetime" />
           <Property Name="Dispatch_city" Type="nvarchar" MaxLength="50" />
           <Property Name="Arrival_city" Type="nvarchar" MaxLength="50" />
-          <Property Name="Id_airplane" Type="int" Nullable="false" />
-          <Property Name="Id_airline" Type="int" Nullable="false" />
+          <Property Name="Id_airplanee" Type="int" Nullable="false" />
+          <Property Name="Id_airlinee" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -163,7 +163,7 @@
               <PropertyRef Name="Id_airline" />
             </Principal>
             <Dependent Role="Flight">
-              <PropertyRef Name="Id_airline" />
+              <PropertyRef Name="Id_airlinee" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -175,7 +175,7 @@
               <PropertyRef Name="Id_airplane" />
             </Principal>
             <Dependent Role="Flight">
-              <PropertyRef Name="Id_airplane" />
+              <PropertyRef Name="Id_airplanee" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -324,8 +324,8 @@
           <Property Name="Arrival_date_time" Type="DateTime" Precision="3" />
           <Property Name="Dispatch_city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Arrival_city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Id_airplane" Type="Int32" Nullable="false" />
-          <Property Name="Id_airline" Type="Int32" Nullable="false" />
+          <Property Name="Id_airplanee" Type="Int32" Nullable="false" />
+          <Property Name="Id_airlinee" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Airline" Relationship="Self.FK_Flight_Airline" FromRole="Flight" ToRole="Airline" />
           <NavigationProperty Name="Airplane" Relationship="Self.FK_Flight_Airplane" FromRole="Flight" ToRole="Airplane" />
           <NavigationProperty Name="Airticket" Relationship="Self.FK_Airticket_Flight" FromRole="Flight" ToRole="Airticket" />
@@ -385,7 +385,7 @@
               <PropertyRef Name="Id_airline" />
             </Principal>
             <Dependent Role="Flight">
-              <PropertyRef Name="Id_airline" />
+              <PropertyRef Name="Id_airlinee" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -409,7 +409,7 @@
               <PropertyRef Name="Id_airplane" />
             </Principal>
             <Dependent Role="Flight">
-              <PropertyRef Name="Id_airplane" />
+              <PropertyRef Name="Id_airplanee" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -473,7 +473,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FlightsEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FlightsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Airline" EntityType="Self.Airline" />
           <EntitySet Name="Airplane" EntityType="Self.Airplane" />
           <EntitySet Name="Airticket" EntityType="Self.Airticket" />
@@ -563,7 +563,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище FlightsModelContainer" CdmEntityContainer="FlightsEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FlightsModelContainer" CdmEntityContainer="FlightsEntities">
           <EntitySetMapping Name="Airline">
             <EntityTypeMapping TypeName="FlightsModel.Airline">
               <MappingFragment StoreEntitySet="Airline">
@@ -612,8 +612,8 @@
                 <ScalarProperty Name="Arrival_date_time" ColumnName="Arrival_date_time" />
                 <ScalarProperty Name="Dispatch_city" ColumnName="Dispatch_city" />
                 <ScalarProperty Name="Arrival_city" ColumnName="Arrival_city" />
-                <ScalarProperty Name="Id_airplane" ColumnName="Id_airplane" />
-                <ScalarProperty Name="Id_airline" ColumnName="Id_airline" />
+                <ScalarProperty Name="Id_airplanee" ColumnName="Id_airplanee" />
+                <ScalarProperty Name="Id_airlinee" ColumnName="Id_airlinee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

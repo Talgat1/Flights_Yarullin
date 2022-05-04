@@ -66,55 +66,55 @@
       <DependentUpon>airticket.xaml</DependentUpon>
     </Compile>
     <Compile Include="db\Airline.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AirModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AirModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AirModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirModel.edmx</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Airplane.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Airticket.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Booking.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Flight.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ModelAir.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAir.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ModelAir.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAir.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ModelAir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAir.edmx</DependentUpon>
     </Compile>
     <Compile Include="db\Role.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sp_helpdiagrams_Result.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sysdiagrams.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\TypeAirticket.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Type_Airplane.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="db\User.cs">
-      <DependentUpon>AirModel.tt</DependentUpon>
+      <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
     <Compile Include="Flight\flight.xaml.cs">
       <DependentUpon>flight.xaml</DependentUpon>
@@ -165,12 +165,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="db\AirModel.edmx">
+    <EntityDeploy Include="db\ModelAir.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AirModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelAir.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\AirModel.edmx.diagram">
-      <DependentUpon>AirModel.edmx</DependentUpon>
+    <None Include="db\ModelAir.edmx.diagram">
+      <DependentUpon>ModelAir.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,18 +191,20 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db\AirModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AirModel.edmx</DependentUpon>
-      <LastGenOutput>AirModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="db\AirModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AirModel.edmx</DependentUpon>
-      <LastGenOutput>AirModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Images\airtic.jpg" />
     <Resource Include="Images\oblako.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\ModelAir.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAir.edmx</DependentUpon>
+      <LastGenOutput>ModelAir.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\ModelAir.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAir.edmx</DependentUpon>
+      <LastGenOutput>ModelAir.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

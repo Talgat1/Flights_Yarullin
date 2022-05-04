@@ -24,8 +24,8 @@ namespace Flights_Yarullin.db
         public Nullable<System.DateTime> Arrival_date_time { get; set; }
         public string Dispatch_city { get; set; }
         public string Arrival_city { get; set; }
-        public int Id_airplane { get; set; }
-        public int Id_airline { get; set; }
+        public int Id_airplanee { get; set; }
+        public int Id_airlinee { get; set; }
     
         public virtual Airline Airline { get; set; }
         public virtual Airplane Airplane { get; set; }

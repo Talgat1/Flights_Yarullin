@@ -21,12 +21,17 @@ namespace Flights_Yarullin.AirTicket
     /// </summary>
     public partial class airticket : Window
     {
+        
         public airticket(db.Flight flightt)
         {
             InitializeComponent();
+            //Class_air.ItemsSource = FlightsEntities.GetContext().TypeAirticket.ToList();
             NameTB.Text = MainWindow.authUser.Name;
             //Number_reis.Text = MainWindow.flightUser.Id_flight.ToString();
             Number_reis.Text = flightt.Id_flight.ToString();
+            Vilet.Text = flightt.Departure_date_time.ToString();
+            Prilet.Text = flightt.Arrival_date_time.ToString();
+            aviakomp.Text = flightt.Airline.Name_arline.ToString();
         }
 
 
@@ -45,8 +50,31 @@ namespace Flights_Yarullin.AirTicket
         {
             flight fl = new flight();
             this.Close();
-            fl.Show();
-            
+            fl.Show();            
         }
+
+        private void ComboBox_Selected(object sender, SelectionChangedEventArgs e)
+        {
+             if(Class_air.SelectedItem != null)
+             {
+                //ComboBoxItem cbi1 = (ComboBoxItem)(sender as ComboBox).SelectedItem;
+                ComboBoxItem cbi = (ComboBoxItem)Class_air.SelectedItem;
+                string selectedText = cbi.Content.ToString();
+                if(selectedText == "item1")
+                {
+                    Price.Text = "1500р";
+                    foreach (var airtic in MainWindow.db.Airticket)
+                    {
+                        if(airtic.Id_type_airticket == 2200001 && airtic.Id_booking == 400002 && airtic.Id_flight.ToString() == Number_reis.Text)
+                        {
+                            Place.Text = airtic.Place;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        
     }
 }

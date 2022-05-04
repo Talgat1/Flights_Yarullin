@@ -24,7 +24,7 @@ namespace Flights_Yarullin
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static FlightsEntities2 db = new FlightsEntities2();
+        public static FlightsEntities db = new FlightsEntities();
 
         public static db.User authUser;
         public static db.Flight flightUser;
@@ -40,7 +40,7 @@ namespace Flights_Yarullin
 
         private void Vhod_Click(object sender, RoutedEventArgs e)
         {
-            flight fl = new flight();
+            //flight fl = new flight();
             foreach (var user in MainWindow.db.User)
             {
                 if (user.Phone == PhoneTB.Text.Trim())
@@ -50,12 +50,14 @@ namespace Flights_Yarullin
                         MessageBox.Show($"Привет {user.Name}");
                         MainWindow.authUser = user;
                         //MessageBox.Show($"{MainWindow.authUser}");
+                        flight fl = new flight();
                         this.Close();
                         fl.Show();
                     }
                     if (user.Password == PasswordTB.Text.Trim() && user.Id_role == 1)
                     {
                         MessageBox.Show($"Привет {user.Name}");
+                        flight fl = new flight();
                         this.Close();
                         fl.Show();
                     }

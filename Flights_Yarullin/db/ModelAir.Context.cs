@@ -16,13 +16,15 @@ namespace Flights_Yarullin.db
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class FlightsEntities2 : DbContext
+    public partial class FlightsEntities : DbContext
     {
-        public FlightsEntities2()
-            : base("name=FlightsEntities2")
+        public FlightsEntities()
+            : base("name=FlightsEntities")
         {
         }
-    
+
+        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

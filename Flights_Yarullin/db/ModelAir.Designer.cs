@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\arull\source\repos\Flights_Yarullin\Flights_Yarullin\db\AirModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\arull\source\repos\Flights_Yarullin\Flights_Yarullin\db\ModelAir.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.
