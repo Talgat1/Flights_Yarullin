@@ -21,9 +21,12 @@ namespace Flights_Yarullin.AirTicket
     /// </summary>
     public partial class airticket : Window
     {
-        public airticket()
+        public airticket(db.Flight flightt)
         {
             InitializeComponent();
+            NameTB.Text = MainWindow.authUser.Name;
+            //Number_reis.Text = MainWindow.flightUser.Id_flight.ToString();
+            Number_reis.Text = flightt.Id_flight.ToString();
         }
 
 
@@ -36,6 +39,14 @@ namespace Flights_Yarullin.AirTicket
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void reis_Click(object sender, RoutedEventArgs e)
+        {
+            flight fl = new flight();
+            this.Close();
+            fl.Show();
+            
         }
     }
 }

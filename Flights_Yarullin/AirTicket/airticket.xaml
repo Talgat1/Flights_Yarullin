@@ -8,11 +8,26 @@
          d:DesignHeight="800" d:DesignWidth="1440" Loaded="Window_Loaded"
         Title="airticket" >
     <Grid>
-        <Image Source="/Flights_Yarullin;component/Images/oblako.jpg" />
+        <Image Source="/Flights_Yarullin;component/Images/airtic.jpg" Margin="0,0,-0.4,-170.4" />
         <Button x:Name="Close" HorizontalAlignment="Right" VerticalAlignment="Top"  Width="20" Height="20" Margin="0,5,5,0" Click="Close_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Flights_Yarullin;component/Images/red_krest.png"/>
             </Button.Background>
         </Button>
+        <Button Content="Вернуться к рейсам" Background="White"  FontSize="18"  VerticalAlignment="Top" HorizontalAlignment="Left" Height="54" Width="180" Margin="40,40,0,0" Click="reis_Click"></Button>
+        <TextBox x:Name="NameTB" Height="40" Margin="340,220,600,530" Background="White" FontSize="24"/>
+        <TextBox x:Name="Place"  Height="40" Margin="340,302,599.6,451.6" Background="White" FontSize="24"/>
+        <TextBox x:Name="Price"  Height="40" Margin="340,382,599.6,371.6" Background="White" FontSize="24"/>
+        <TextBox x:Name="Class"  Height="40" Margin="340,462,599.6,291.6" Background="White" FontSize="24"/>
+        <TextBox x:Name="Number_reis"  Height="40" Margin="340,542,599.6,211.6" Background="White" FontSize="24"/>
+        <TextBox x:Name="Vilet"  Height="40" Margin="340,622,599.6,131.6" Background="White" FontSize="24"/>
+        <TextBox x:Name="Prilet" Height="40" Margin="340,702,599.6,51.6" Background="White" FontSize="24"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="40,220,0,530"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Место:" HorizontalAlignment="Left" Margin="40,300,0,450"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Цена:" HorizontalAlignment="Left" Margin="40,380,0,370"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Класс:" HorizontalAlignment="Left" Margin="40,460,0,290"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Номер рейса:" HorizontalAlignment="Left" Margin="40,540,0,210"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Дата вылета:" HorizontalAlignment="Left" Margin="40,620,0,130"  Background="White" Width="270" Height="40" FontSize="24"/>
+        <Label Content="Дата прилёта:" HorizontalAlignment="Left" Margin="40,700,0,50"  Background="White" Width="270" Height="40" FontSize="24"/>
     </Grid>
 </Window>

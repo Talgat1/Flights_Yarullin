@@ -26,7 +26,8 @@ namespace Flights_Yarullin
     {
         public static FlightsEntities2 db = new FlightsEntities2();
 
-        public static User authUser;
+        public static db.User authUser;
+        public static db.Flight flightUser;
         public MainWindow()
         {
             InitializeComponent();

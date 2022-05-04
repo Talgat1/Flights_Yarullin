@@ -7,7 +7,8 @@
         mc:Ignorable="d" WindowState="Maximized"  WindowStyle="None"
         d:DesignHeight="800" d:DesignWidth="1440" 
         Title="registration">
-    <Grid Background="#FF005F8B" Margin="0,0,-0.4,-19.6">
+    <Grid  Margin="0,0,-0.4,-19.6">
+        <Image Source="/Flights_Yarullin;component/Images/oblako.jpg" Opacity="0.5"></Image>
         <Label Content="Имя" HorizontalAlignment="Left" Height="60" Margin="134,219,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
         <Label Content="Регистрация" HorizontalAlignment="Center" Height="71" Margin="559,71,613,0" VerticalAlignment="Top" Background="White" Width="262" FontSize="42"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Height="60" Margin="134,321,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>

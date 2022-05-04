@@ -23,14 +23,24 @@ namespace Flights_Yarullin.Flight
     public partial class flight : Window
     {
         int b = 0;
+        int b1 = 0;
         public flight()
         {
             InitializeComponent();
-            var dd1 =
-            from us in MainWindow.db.Flight
-            orderby us.Airline.Name_arline
-            select new { us.Id_flight, us.Dispatch_city, us.Arrival_city, us.Departure_date_time, us.Arrival_date_time, us.Airline.Name_arline };
-            dataGrid1.ItemsSource = dd1.ToList();
+            var gg = MainWindow.db.Flight.ToList();
+
+                
+            var bbb =
+            from bse in MainWindow.db.Flight
+            select new { bse.Id_flight, bse.Dispatch_city, bse.Arrival_city, bse.Departure_date_time, bse.Arrival_date_time, bse.Airline.Name_arline };
+            dataGrid1.ItemsSource = bbb.ToList();
+                //var gg = MainWindow.db.Flight.ToList();
+                
+            
+            //var gg  = MainWindow.db.Flight.ToList();
+            //dataGrid1.ItemsSource = gg;
+            
+            //var gg = MainWindow.db.Flight.Where(c => c.Dispatch_city.ToLower() == "Омск".ToLower()).ToList();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -46,26 +56,25 @@ namespace Flights_Yarullin.Flight
 
         private void Poisk_Click(object sender, RoutedEventArgs e)
         {
+            //var a;
             
-
             foreach (var flig in MainWindow.db.Flight)
             {
 
                 if (flig.Arrival_city == Poisk1.Text.Trim() && flig.Dispatch_city == Poisk2.Text.Trim())
-                {
-                    //user.Phone = price.ToString().Trim();
-                    b++;
+                {                   
+                    b++;                    
                     var query =
                     from us in MainWindow.db.Flight
-
-                    where us.Arrival_city == Poisk1.Text.Trim() && us.Dispatch_city == Poisk2.Text.Trim()
+                    where us.Dispatch_city == Poisk1.Text.Trim() && us.Arrival_city == Poisk2.Text.Trim()
                     orderby us.Airline.Name_arline
-                    select new { us.Id_flight, us.Dispatch_city, us.Arrival_city, us.Departure_date_time, us.Arrival_date_time, us.Airline.Name_arline };
-
-
-
-                    //dataGrid1.ItemsSource = MainWindow.db.Flight.ToList();
+                    select new {us.Id_flight, us.Dispatch_city, us.Arrival_city, us.Departure_date_time, us.Arrival_date_time, us.Airline.Name_arline  };
                     dataGrid1.ItemsSource = query.ToList();
+                    //MainWindow.db.Flight.ToList() = query.ToList();
+
+                    //var gg2 = query.Where(c => c.Dispatch_city.ToLower() == Poisk1.Text.ToLower() && c.Arrival_city.ToLower() == Poisk2.Text.ToLower()).ToList();
+                    //var gg2 = query;
+                    //dataGrid1.ItemsSource = gg2;
 
                 }
             }
@@ -73,14 +82,30 @@ namespace Flights_Yarullin.Flight
             {
                 MessageBox.Show("Нет такого рейса!" +
                     "Возможно вы неверно написали название название города!");
-            }
+            }                                    
         }
 
         
 
         private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            airticket air = new airticket();
+            if (b1 == 0)
+            {
+                InitializeComponent();
+                //var gg = MainWindow.db.Flight.ToList();
+                //dataGrid1.ItemsSource = gg;
+                var gg2 = MainWindow.db.Flight.Where(c => c.Dispatch_city.ToLower() == Poisk1.Text.ToLower() && c.Arrival_city.ToLower() == Poisk2.Text.ToLower()).ToList();
+                dataGrid1.ItemsSource = gg2;
+            }
+            if(b == 0)
+            {
+                dataGrid1.ItemsSource = gg;
+            }
+            //MainWindow.flightUser = dataGrid1.
+            //MainWindow.flightUser.Id_flight = flight.authIdFlight.Id_flight;
+            var ggg = dataGrid1.SelectedItem as db.Flight;
+            //MainWindow.flightUser = (db.Flight)dataGrid1.SelectedItem;
+            airticket air = new airticket(ggg);
             this.Close();
             air.Show();
         }

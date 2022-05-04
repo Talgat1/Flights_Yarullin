@@ -8,7 +8,7 @@
          d:DesignHeight="800" d:DesignWidth="1440" Loaded="Window_Loaded"
         Title="flight">
     <Grid>
-        <Image Source="/Flights_Yarullin;component/Images/oblako.jpg"></Image>
+        <Image Source="/Flights_Yarullin;component/Images/oblako.jpg" Opacity="0.5"></Image>
         <Label Content="Рейсы" HorizontalAlignment="Center"  Margin="237,30,194.6,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="62" FontSize="20" Height="26" />
         <Label Content="Введите города и выберите желаемый рейс" HorizontalAlignment="Left"  Margin="31,190,0,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="295" FontSize="14" Height="22" RenderTransformOrigin="1.543,2.191"/>
         <Label Content="Откуда:" HorizontalAlignment="Left"  Margin="31,270,0,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="62" FontSize="14" Height="22" />

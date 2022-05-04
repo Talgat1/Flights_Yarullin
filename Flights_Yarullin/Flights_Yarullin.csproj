@@ -201,6 +201,7 @@
       <DependentUpon>AirModel.edmx</DependentUpon>
       <LastGenOutput>AirModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\airtic.jpg" />
     <Resource Include="Images\oblako.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
