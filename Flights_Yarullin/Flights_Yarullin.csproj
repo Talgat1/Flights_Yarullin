@@ -119,6 +119,9 @@
     <Compile Include="Flight\flight.xaml.cs">
       <DependentUpon>flight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="History_bron\historyUser.xaml.cs">
+      <DependentUpon>historyUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration\registration.xaml.cs">
       <DependentUpon>registration.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Flight\flight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History_bron\historyUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

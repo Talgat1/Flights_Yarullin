@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Flights_Yarullin.db;
 using Flights_Yarullin.AirTicket;
 using Flights_Yarullin.Flight;
+using Flights_Yarullin.History_bron;
 
 namespace Flights_Yarullin.Flight
 {
@@ -72,6 +73,13 @@ namespace Flights_Yarullin.Flight
             airticket air = new airticket(ggg);
             this.Close();
             air.Show();
+        }
+
+        private void History_Click(object sender, RoutedEventArgs e)
+        {
+            historyUser hs = new historyUser();
+            this.Close();
+            hs.Show();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Flights_Yarullin.AirTicket
     /// </summary>
     public partial class airticket : Window
     {
-        
+        string selectedText;
         public airticket(db.Flight flightt)
         {
             InitializeComponent();
@@ -59,22 +59,121 @@ namespace Flights_Yarullin.AirTicket
              {
                 //ComboBoxItem cbi1 = (ComboBoxItem)(sender as ComboBox).SelectedItem;
                 ComboBoxItem cbi = (ComboBoxItem)Class_air.SelectedItem;
-                string selectedText = cbi.Content.ToString();
-                if(selectedText == "item1")
+                selectedText = cbi.Content.ToString();
+                if(selectedText == "Бизнесс класс")
                 {
-                    Price.Text = "1500р";
+                    int b = 0;
+                    //Price.Text = "1500р";
                     foreach (var airtic in MainWindow.db.Airticket)
                     {
-                        if(airtic.Id_type_airticket == 2200001 && airtic.Id_booking == 400002 && airtic.Id_flight.ToString() == Number_reis.Text)
+                        if(airtic.Id_type_airticket == 2200001 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
                         {
+                            b++;
                             Place.Text = airtic.Place;
+                            Price.Text = airtic.Price;
+                            
                         }
+                    }
+                    if (b == 0)
+                    {
+                        MessageBox.Show("Все билеты бизнесс класса забронированы!");
+                    }
+                }
+                if (selectedText == "Эконом класс")
+                {
+                    int b = 0;
+                    //Price.Text = "1500р";
+                    foreach (var airtic in MainWindow.db.Airticket)
+                    {
+                        if (airtic.Id_type_airticket == 2200002 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
+                        {
+                            b++;
+                            Place.Text = airtic.Place;
+                            Price.Text = airtic.Price;
+
+                        }
+                    }
+                    if (b == 0)
+                    {
+                        MessageBox.Show("Все билеты эконом класса забронированы!");
+                    }
+                }
+                if (selectedText == "Первый класс")
+                {
+                    int b = 0;
+                    //Price.Text = "1500р";
+                    foreach (var airtic in MainWindow.db.Airticket)
+                    {
+                        if (airtic.Id_type_airticket == 2200003 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
+                        {
+                            b++;
+                            Place.Text = airtic.Place;
+                            Price.Text = airtic.Price;
+
+                        }
+                    }
+                    if (b == 0)
+                    {
+                        MessageBox.Show("Все билеты первого класса забронированы!");
                     }
                 }
             }
 
         }
 
-        
+        private void Bron_Click(object sender, RoutedEventArgs e)
+        {
+            int b = 0;
+            if(selectedText == "Бизнесс класс")
+            {
+                foreach (var airtic in MainWindow.db.Airticket)
+                {
+                    if (airtic.Id_type_airticket == 2200001 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
+                    {
+                        b++;                                             
+                        airtic.Id_user = MainWindow.authUser.Id_user;
+                        airtic.Id_booking = 400002;                       
+                        //airt.Id_user = airtic.Id_user;
+                        //airt.Id_booking = airtic.Id_booking;
+
+                    }
+                }                
+            }
+            if (selectedText == "Эконом класс")
+            {
+                foreach (var airtic in MainWindow.db.Airticket)
+                {
+                    if (airtic.Id_type_airticket == 2200002 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
+                    {
+                        b++;
+                        airtic.Id_user = MainWindow.authUser.Id_user;
+                        airtic.Id_booking = 400002;
+                        //airt.Id_user = airtic.Id_user;
+                        //airt.Id_booking = airtic.Id_booking;
+
+                    }
+                }
+            }
+            if (selectedText == "Первый класс")
+            {
+                foreach (var airtic in MainWindow.db.Airticket)
+                {
+                    if (airtic.Id_type_airticket == 2200003 && airtic.Id_user == null && airtic.Id_booking == 400001 && airtic.Id_flight.ToString() == Number_reis.Text && b == 0)
+                    {
+                        b++;
+                        airtic.Id_user = MainWindow.authUser.Id_user;
+                        airtic.Id_booking = 400002;
+                        //airt.Id_user = airtic.Id_user;
+                        //airt.Id_booking = airtic.Id_booking;
+
+                    }
+                }
+            }
+            MainWindow.db.SaveChanges();
+            MessageBox.Show("Успешно забронировано! Ваша бронь билета находится в истории бронирования.");
+            flight fl = new flight();
+            this.Close();
+            fl.Show();
+        }
     }
 }

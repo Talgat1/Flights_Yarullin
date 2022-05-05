@@ -22,9 +22,7 @@ namespace Flights_Yarullin.db
             : base("name=FlightsEntities")
         {
         }
-
-        
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

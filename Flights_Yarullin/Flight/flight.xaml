@@ -9,18 +9,19 @@
     <Grid>
         <Image Source="/Flights_Yarullin;component/Images/oblako.jpg" Opacity="0.5"></Image>
         <Label Content="Рейсы" HorizontalAlignment="Center"  Margin="237,30,194.6,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="62" FontSize="20" Height="26" />
-        <Label Content="Введите города и выберите желаемый рейс" HorizontalAlignment="Left"  Margin="31,190,0,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="295" FontSize="14" Height="22" RenderTransformOrigin="1.543,2.191"/>
+        <TextBox TextWrapping="Wrap"  Background="White" FontSize="14" Margin="24,88,1107.6,644.4" >
+            Введите города и нажмите на кнопку ниже, Поиск рейса.
+            После чего нажмите на желаемый рейс.</TextBox>
         <Label Content="Откуда:" HorizontalAlignment="Left"  Margin="31,270,0,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="62" FontSize="14" Height="22" />
         <Label Content="Куда:" HorizontalAlignment="Left"  Margin="31,314,0,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="62" FontSize="14" Height="22"/>
         <Button x:Name="Poisk_but" Content="Поиск рейса" Margin="31,375,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="295" Height="31" Background="White"  Click="Poisk_Click"/>
-
+        <Button x:Name="Histoty_but" Content="История бронирования" Margin="31,438,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="295" Height="31" Background="White"  Click="History_Click"/>
         <TextBox x:Name="Poisk1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="200" FontSize="16" Margin="126,270,0,0" BorderBrush="#FF73BEFA" />
         <TextBox x:Name="Poisk2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="200" FontSize="16" Margin="126,314,0,0" BorderBrush="#FF73BEFA"/>
         <Button x:Name="Close" HorizontalAlignment="Right" VerticalAlignment="Top"  Width="30" Height="30" Margin="0,0,-0.4,0" Click="Close_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Flights_Yarullin;component/Images/red_krest.png"/>
             </Button.Background>
-
         </Button>
         <DataGrid SelectionChanged="dataGridReis_SelectionChanged"  ColumnWidth="140" Width="840" AutoGenerateColumns="False"  x:Name="dataGridReis" Margin="471,86,130,0" >
             <DataGrid.Columns >
