@@ -1,0 +1,28 @@
+﻿<Window x:Class="Flights_Yarullin.Admin.deleteReis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flights_Yarullin.Admin"
+        mc:Ignorable="d" WindowState="Maximized"  WindowStyle="None" d:DesignWidth="1440" Loaded="Window_Loaded"
+         Height="816.8"  Title="deleteReis">
+    <Grid>
+        <Image Source="/Flights_Yarullin;component/Images/oblako.jpg" Opacity="0.5"></Image>
+        <Label Content="Пользователи" HorizontalAlignment="Center"  Margin="707,30,588.6,0" VerticalAlignment="Top" Padding="0,0,0,0" Background="White" Width="138" FontSize="20" Height="26" />
+        <Button x:Name="Close" HorizontalAlignment="Right" VerticalAlignment="Top"  Width="30" Height="30" Margin="0,0,-0.4,0" Click="Close_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Flights_Yarullin;component/Images/red_krest.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid SelectionChanged="dataGridReis_SelectionChanged"  ColumnWidth="140" Width="840" AutoGenerateColumns="False"  x:Name="dataGridReis" Margin="471,86,130,0" >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Номер рейса" Width="140" Binding="{Binding Id_flight}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город вылета" Width="140" Binding="{Binding Dispatch_city}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город прибытия" Width="140" Binding="{Binding Arrival_city}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата вылета" Width="140" Binding="{Binding Departure_date_time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата прибытия" Width="140" Binding="{Binding Arrival_date_time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Авиакомпания" Width="140" Binding="{Binding Airline.Name_arline}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

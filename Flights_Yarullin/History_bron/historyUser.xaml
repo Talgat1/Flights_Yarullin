@@ -15,6 +15,10 @@
                 <ImageBrush ImageSource="/Flights_Yarullin;component/Images/red_krest.png"/>
             </Button.Background>
         </Button>
+        <Button Content="Вернуться к рейсам" Background="White"  FontSize="18"  VerticalAlignment="Top" HorizontalAlignment="Left" Height="54" Width="180" Margin="40,40,0,0" Click="reis_Click"></Button>
+        <TextBox TextWrapping="Wrap"  Background="White" FontSize="14" Margin="10,193,1169.6,539.4" >
+            Нажмите на билет и бронь будет снята.
+            Или просто порадуйтесь, что все работает.</TextBox>
         <DataGrid SelectionChanged="dataGridTicket_SelectionChanged"   Width="1060" AutoGenerateColumns="False"  x:Name="dataGridTicket" Margin="284,86,29.6,0.4" >
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Номер рейса" Width="100" Binding="{Binding Id_flight}"></DataGridTextColumn>

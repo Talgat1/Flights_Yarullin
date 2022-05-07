@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Flights_Yarullin.db;
-using Flights_Yarullin.Flight;
+using Flights_Yarullin.Reis;
 
 namespace Flights_Yarullin.AirTicket
 {
@@ -48,7 +48,7 @@ namespace Flights_Yarullin.AirTicket
 
         private void reis_Click(object sender, RoutedEventArgs e)
         {
-            flight fl = new flight();
+            reis fl = new reis();
             this.Close();
             fl.Show();            
         }
@@ -171,7 +171,7 @@ namespace Flights_Yarullin.AirTicket
             }
             MainWindow.db.SaveChanges();
             MessageBox.Show("Успешно забронировано! Ваша бронь билета находится в истории бронирования.");
-            flight fl = new flight();
+            reis fl = new reis();
             this.Close();
             fl.Show();
         }

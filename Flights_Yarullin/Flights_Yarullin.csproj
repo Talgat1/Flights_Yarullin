@@ -62,6 +62,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin\addReis.xaml.cs">
+      <DependentUpon>addReis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminWindow.xaml.cs">
+      <DependentUpon>adminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\deleteReis.xaml.cs">
+      <DependentUpon>deleteReis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\userAdd.xaml.cs">
+      <DependentUpon>userAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\userDelete.xaml.cs">
+      <DependentUpon>userDelete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AirTicket\airticket.xaml.cs">
       <DependentUpon>airticket.xaml</DependentUpon>
     </Compile>
@@ -98,12 +113,6 @@
     <Compile Include="db\Role.cs">
       <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ModelAir.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ModelAir.tt</DependentUpon>
-    </Compile>
     <Compile Include="db\sysdiagrams.cs">
       <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
@@ -116,20 +125,36 @@
     <Compile Include="db\User.cs">
       <DependentUpon>ModelAir.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flight\flight.xaml.cs">
-      <DependentUpon>flight.xaml</DependentUpon>
-    </Compile>
     <Compile Include="History_bron\historyUser.xaml.cs">
       <DependentUpon>historyUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Registration\registration.xaml.cs">
       <DependentUpon>registration.xaml</DependentUpon>
     </Compile>
-    <Page Include="AirTicket\airticket.xaml">
+    <Compile Include="Reis\reis.xaml.cs">
+      <DependentUpon>reis.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Admin\addReis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flight\flight.xaml">
+    <Page Include="Admin\adminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\deleteReis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\userAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\userDelete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AirTicket\airticket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,6 +175,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Registration\registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reis\reis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +231,9 @@
     <Resource Include="Images\oblako.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\admin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="db\ModelAir.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelAir.edmx</DependentUpon>
@@ -213,5 +245,6 @@
       <LastGenOutput>ModelAir.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

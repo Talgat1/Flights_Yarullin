@@ -14,7 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Flights_Yarullin.db;
 using Flights_Yarullin.Registration;
-using Flights_Yarullin.Flight;
+using Flights_Yarullin.Reis;
+using Flights_Yarullin.Admin;
 using Flights_Yarullin.AirTicket;
 
 namespace Flights_Yarullin
@@ -26,8 +27,8 @@ namespace Flights_Yarullin
     {
         public static FlightsEntities db = new FlightsEntities();
 
-        public static db.User authUser;
-        public static db.Flight flightUser;
+        public static User authUser;
+        public static Flight flightUser;
         public MainWindow()
         {
             InitializeComponent();
@@ -50,14 +51,14 @@ namespace Flights_Yarullin
                         MessageBox.Show($"Привет {user.Name}");
                         MainWindow.authUser = user;
                         //MessageBox.Show($"{MainWindow.authUser}");
-                        flight fl = new flight();
+                        reis fl = new reis();
                         this.Close();
                         fl.Show();
                     }
                     if (user.Password == PasswordTB.Text.Trim() && user.Id_role == 1)
                     {
                         MessageBox.Show($"Привет {user.Name}");
-                        flight fl = new flight();
+                        adminWindow fl = new adminWindow();
                         this.Close();
                         fl.Show();
                     }

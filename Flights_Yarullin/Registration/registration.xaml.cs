@@ -33,31 +33,33 @@ namespace Flights_Yarullin.Registration
             }
             else
             {
-                User user = new User();
+                int b = 0;
+                db.User user = new db.User();
                 user.Surname = SurnameTB.Text;
                 user.Name = NameTB.Text;
                 user.Phone = PhoneTB.Text;
                 user.Password = PasswordTB.Text;
                 user.Id_role = 2;
-                MainWindow.db.User.Add(user);
-                //MainWindow.db.Сustomer.Add(customer);
-                try
+                foreach (var tt in MainWindow.db.User)
                 {
-                    MainWindow.db.SaveChanges();
-                }
-                catch
-                {
-                    MessageBox.Show("Такой логин уже существет, введите другой");
-                    return;
+                    if (tt.Phone == PhoneTB.Text)
+                    {
+                        b++;
+                        MessageBox.Show("Такой номер телефона уже зарегистрирован, введите другой номер");
+                    }
                 }
 
-                finally
+                if (b == 0)
                 {
-                    MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
+                    MainWindow.db.User.Add(user);
+                    MainWindow.db.SaveChanges();
                     MainWindow minwin = new MainWindow();
                     this.Close();
                     minwin.Show();
                 }
+
+                //MainWindow.db.Сustomer.Add(customer);
+
 
             }
         }
